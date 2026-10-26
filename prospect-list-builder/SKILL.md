@@ -1,6 +1,6 @@
 ---
 name: prospect-list-builder
-description: Turns the user's Ideal Customer Profile into a prospecting plan: exact job titles to search, company filters, where to find these people, and a ready-to-fill CSV. Use when the user asks to build a prospect list, find leads, plan who to target, or says "build my prospect list plan from my ICP."
+description: Turns the user's Ideal Customer Profile into a prospecting plan with exact job titles to search, company filters, where to find these people, and a ready-to-fill CSV. Use when the user asks to build a prospect list, find leads, plan who to target, or says "build my prospect list plan from my ICP."
 ---
 
 # Prospect List Builder
