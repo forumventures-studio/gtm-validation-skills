@@ -1,54 +1,54 @@
 ---
-name: messaging
-description: Writes a LinkedIn connection note and two short follow-ups for one contact, in the user's own voice. Use when the user shares a contact (name, role, company) plus a signal and asks for outreach, a first message, a connection request, or follow-ups, or says "write outreach for this one."
+name: icp-scoring
+description: Scores a list of contacts from 1 to 10 against the user's Ideal Customer Profile, so they know who to reach out to first. Use when the user pastes a list of contacts (text or CSV) and asks to score, rank, prioritize, or qualify them, or says "score these against my ICP."
 ---
 
-# Messaging
+# ICP Scoring
 
-Write outreach for one contact that sounds like the user, not like AI.
+Score every contact from 1 to 10 against the user's ICP, then rank them so the best fits come first.
 
 ## Before you start
 
 Read these files from the project:
-- **Voice.md**: how the user writes, words they use, and words they never use
-- **Company Brief.md**: what the company does, the problem it solves, and proof points
-- **ICP.md**: the angle that matters to each role in the buying committee
-- **Buying Signals.md**: the one line angle for each signal
+- **ICP.md**: who the user is targeting, the buying committee, and disqualifiers
+- **Buying Signals.md**: top signals, weak signals, and fake signals
 
-If Voice.md is missing, tell the user and ask for two or three things they've written. The messages won't sound like them without it.
+If either file is missing, tell the user and ask them to paste it in. Don't guess the ICP.
 
 ## Input
 
-One contact: name, role, company, and any signal the user pastes, like a recent post, news, or a job change.
+A list of contacts, pasted as text or CSV. Use whatever fields are present, such as name, title, company, company size, industry, tools, LinkedIn URL, email, and any notes or recent activity.
 
-## The formula
+## Scoring rubric
 
-Every message follows three steps:
-1. **Something you noticed:** a specific, real signal about them or their company
-2. **Why it matters:** the problem that signal usually creates
-3. **A soft, low-friction ask:** a question about their world, not a request for a meeting
+| Criteria | Points |
+| --- | --- |
+| Owns the pain: their role is the champion or decision maker in ICP.md | 0 to 3 |
+| Company size fits ICP.md | 0 to 2 |
+| A buying signal from Buying Signals.md is present: 2 for a top signal, 1 for a weak signal, 0 for none or a fake signal | 0 to 2 |
+| Tech stack fits ICP.md | 0 to 2 |
+| Reachable: has a LinkedIn profile or email | 0 to 1 |
 
-Example: "Saw your team just opened a second production line. That's usually when scheduling turns into spreadsheet chaos. How are you handling it today?"
+Score a contact 0 overall if they match a disqualifier in ICP.md, and say which one.
 
-Match the angle to the role using ICP.md. A champion hears about their headache. A decision maker hears about cost and return.
-
-If the user doesn't have a product yet, say so honestly. Messages that open with "I'll be upfront: I don't have a product yet" often get the best replies.
+If a field is missing, score that criterion 0 and note it in the reason. Don't assume.
 
 ## Output
 
-1. **Connection note:** under 300 characters
-2. **Follow-up 1:** for after they accept. Lead with the signal and ask one question.
-3. **Follow-up 2:** about a week later. Share something useful, like an insight or a stat, with a low-pressure close, such as "Not a priority right now? Totally fine."
+A table ranked from highest score to lowest:
 
-Show the character count for the connection note.
+| Rank | Name | Company | Score | Reason |
+| --- | --- | --- | --- | --- |
+
+Keep each reason to one line, naming what drove the score, like "Head of RevOps, 120 people, just migrated CRMs."
+
+After the table, add one line: how many contacts scored 8 or higher. Those are the ones to reach out to first.
 
 ## Rules
 
-- No pitching, no hype, no buzzwords
-- No exclamation points and no em dashes
-- No fake familiarity, like "Hope you're well!"
-- One idea per message
-- Never send anything. Draft only. The user reviews and approves every message.
+- Never invent details about a contact.
+- Flag anything you're unsure about, so the user can check it.
+- No em dashes.
 
 ---
 
